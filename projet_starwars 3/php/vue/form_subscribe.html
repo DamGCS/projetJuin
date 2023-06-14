@@ -1,0 +1,34 @@
+<!--Formulaire d'inscription-->
+<main>
+  <span id="lightsabersub" class="lightsaber"></span>
+  <section class="sub-box">
+    <h2>Inscription</h2>
+    <form action="index.php?action=subscribe" method="POST">
+      <fieldset class="user-box">
+          <label for="nom">Nom :</label>
+          <input type="text" name="nom" id="nom" required="" autocomplete="off">
+          
+          <label for="prenom">Prénom :</label>
+          <input type="text" name="prenom" id="prenom" required="" autocomplete="off">
+          
+          <label for="lieu_de_residence">Lieu de résidence :</label>
+          <input type="text" name="lieu_de_residence" id="lieu_de_residence" required="" autocomplete="off">
+          
+          <label for="mail">eMail :</label>
+          <input type="mail" name="mail" id="mail" required="" autocomplete="off">
+          
+          <label for="mail2">Vérification de l'eMail :</label>
+          <input type="mail" name="mail2" id="mail2" required="" autocomplete="off">
+          
+          <label for="password">Mot de passe :</label>
+          <input type="password" name="password" id="password" required="" autocomplete="off">
+          
+          <label for="password2">Vérification du mot de passe :</label>
+          <input type="password" name="password2" id="password2" required="" autocomplete="off">
+      </fieldset>
+
+      <button type="submit" name="subscribe">Inscription</button>
+    </form>
+      <a id="inscription" href="index.php?action=login"><button>Se Connecter</button></a>
+  </section>
+</main>

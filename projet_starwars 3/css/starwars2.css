@@ -1,0 +1,1118 @@
+/***************************
+    Sommaire
+***************************/
+/* 
+NAV -> Ligne 27
+Menu Burger -> 88
+Carroussel Planètes -> 127
+
+*/
+/***************************
+Barre de navigation
+***************************/
+#homewall1 {
+    background-image: url("https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/space.png");
+    /*background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;*/
+}
+/**********************************
+            NAV
+**********************************/
+* {
+  font-family: "Bruno Ace SC";
+  text-shadow : 1px 1px 1px black;
+}
+body,
+h1,
+q,
+figure,
+h4, 
+p {
+  margin: 0;
+  padding: 0;
+}
+fieldset {
+  border: none;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+#navbarre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 1.2em;
+  margin-top: 1.5em;
+}
+#identite {
+  margin: 0 3em 0 6em;
+}
+#identite > a > h1 {
+  color: #FF0;
+  font-size: 2.2em;
+  text-align: center;
+}
+#identite > q {
+  display: flex;
+  justify-content: center;
+  color: #FF0;
+  font-size: 1.2em;
+  text-align: center;
+}
+#loginbouton {
+  border: 2px solid white;
+  width: 4em;
+  height: 4em;
+  border-radius: 100%;
+}
+.hamburger-menu {
+  width: 2em;
+}
+.lightsaber {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 2em;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+  height: 4px;
+  background: #FFF;
+  border-radius: 7px;
+  z-index: -1;
+}
+
+/**********************
+      Mon Compte
+***********************/
+#lightsabermoncompte {
+  box-shadow: 0 0 5px #FFFFFF,
+              0 0 8px #FFFFFF,
+              0 0 12px #FFFFFF,
+              0 0 15px #FFFFFF,
+              0 0 25px #FFFFFF;
+}
+.moncompte {
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #FFFFFF,
+              0 0 8px #FFFFFF,
+              0 0 12px #FFFFFF,
+              0 0 15px #FFFFFF,
+              0 0 25px #FFFFFF;
+  margin: 3em 5em;
+  background-color: black;
+}
+.moncompte > h2 {
+  color: #FF0;
+  font-size: 2.2em;
+  text-align: center;
+}
+.compteset {
+  border-top: 2px solid #FF0;
+  margin: 2em;
+}
+.compteset > section > p {
+  color: #FF0;
+  line-height: 2em;
+  font-size: .8em;
+}
+/**********************
+    Menu Burger
+***********************/
+.menu-open {
+  position: fixed;
+  width: 100%;
+}
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+  background-color: white;
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+  background-color: white;
+}
+#menu__toggle:checked ~ .menu__box {
+  right: 0 !important;
+}
+#menu__toggle:not(:checked) ~ body {
+  overflow: hidden;
+}
+.menu__btn {
+  position: absolute;
+  top: 3.6em;
+  right: 3em;
+  width: 45px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 6;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -120%;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding-top: 10em;
+  list-style: none;
+  background-image: url("https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/obiwan.png");
+  background-size: cover;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  transition-duration: .25s;
+  z-index: 5;
+}
+.menu__item {
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+  font-size: 4em;
+  font-weight: 500;
+  text-decoration: none;
+  transition-duration: .25s;
+  padding: .6em .8em;
+}
+.boxdesktop {
+  padding: 0;
+  margin: 0;
+}
+.menu__box > ul > hr {
+  width: 95%;
+  margin: auto;
+  height: 2px;
+  background-color: white;
+  border: none;
+}
+/*************************
+    Menu Utilisateur
+*************************/
+
+/*************************
+        FOOTER
+*************************/
+.footer {
+  background-image: url("https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/darkvador6.png");
+  background-size: cover;
+}
+.lightsaberfooter {
+  color: white;
+  box-shadow: 0 0 5px #FF0000,
+              0 0 8px #FF0000,
+              0 0 12px #FF0000,
+              0 0 15px #FF0000,
+              0 0 25px #FF0000;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-right: auto;
+  width: 100%;
+  height: 4px;
+  background: #FFF;
+  border-radius: 7px;
+  z-index: 2;
+  margin: 0.7em 0;
+}
+#infoooter {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.6em;
+  margin: 1em 1em 0;
+  text-align: center;
+  color: #FF0;
+  line-height: 2em;
+}
+#infoooter > h3 {
+  margin: 0;
+}
+.lieu,
+.reseauxsociaux {
+  padding: 1em;
+}
+.reseauxsociaux > .reseaux > a {
+  color: #FF0;
+}
+.reseaux {
+    gap: 1em 0;
+    display: flex;
+    justify-content: center;
+    padding: 0.7em;
+}
+.reseaux {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+.reseaux a {
+    margin: 5px;
+}
+/*************************
+  Carrousel et Bouton 
+*************************/
+#lightsaberresa {
+  background-color: #FFF;
+  box-shadow: 0 0 5px #FF0000,
+              0 0 8px #FF0000,
+              0 0 12px #FF0000,
+              0 0 15px #FF0000,
+              0 0 25px #FF0000;
+}
+.planetsection {
+  margin: 1em;
+}
+.carrousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%; 
+  margin: 0 auto; 
+}
+.carrousel-btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3em 0;
+}
+.carrousel-btns button {
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: .7em;
+  border: none;
+  color: #ff0;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 0 5px #FF0000,
+              0 0 8px #FF0000,
+              0 0 12px #FF0000,
+              0 0 15px #FF0000,
+              0 0 25px #FF0000;
+}
+.carrousel-title {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #ff0;
+  border-radius: 50px;
+  font-size: 2em;
+  font-weight: bold;
+  border: 2px solid white;
+  padding: 0.8em 1em;
+  max-width: 8em;
+  box-shadow: 0 0 5px #FF0000,
+              0 0 8px #FF0000,
+              0 0 12px #FF0000,
+              0 0 15px #FF0000,
+              0 0 25px #FF0000;
+}
+.carrousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  margin-bottom: 3em;
+}
+.carrousel-images img {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.articleplanet {
+  flex-direction: column;
+}
+/************************/
+/*DIV INFOS PLANETES*/
+/************************/
+.infoplanet {
+  color: #ff0;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 0 2em 2em;
+  background-color: black;
+  font-size: 1.5em;
+  box-shadow: 0 0 5px #FF0000,
+              0 0 8px #FF0000,
+              0 0 12px #FF0000,
+              0 0 15px #FF0000,
+              0 0 25px #FF0000;
+}
+.invisiblenom {
+  visibility: hidden;
+  display: none;
+}
+/****************************/
+/*DIV FORMULAIRE RESERVATION*/
+/****************************/
+
+#reservationform {
+  margin: 3em 2em 4em;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-image: url("https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/darkvador.png");
+  background-size: cover;
+  box-shadow: 0 0 5px #FF0000,
+              0 0 8px #FF0000,
+              0 0 12px #FF0000,
+              0 0 15px #FF0000,
+              0 0 25px #FF0000;
+  font-size: 1.3em;
+}
+h3 {
+  color: #ff0;
+  font-size: 1.5em;
+  margin: 0 0 0 .5em;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: .5em;
+  font-weight: bold;
+  color: #ff0;
+}
+
+#dateheure {
+  display: flex;
+  justify-content: space-around;
+  margin: 1.5em 0;
+  color: #ff0;
+}
+
+.inputresa {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+  opacity: .5;
+}
+
+#passagers input {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+#btnresa {
+  display: block;
+  width: 60%;
+  padding: .6em;
+  margin-left: 20%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  opacity: .5;
+}
+/****************************/
+/*TRANSITION RESERVATION******/
+/****************************/
+.bodytransition {
+  overflow: hidden;
+}
+.info-resa {
+  line-height: 2em;
+  background-color: black;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid white;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.info-resa > h4 {
+  text-align: center;
+  color: #FF0;
+}
+.info-resa > p {
+  text-align: center;
+  color: #FF0;
+}
+.info-resa > a {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+  cursor: pointer;
+  color: #FF0;
+}
+/****************************
+      FORMULAIRE LOGIN
+****************************/
+#lightsaberlogin {
+  box-shadow: 0 0 5px #FFA500,
+              0 0 8px #FFA500,
+              0 0 12px #FFA500,
+              0 0 15px #FFA500,
+              0 0 25px #FFA500;
+}
+.login-box {
+  width: 80%;
+  background-color: black;
+  padding: 30px;
+  border-radius: 15px;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  box-shadow: 0 0 5px #FFA500,
+              0 0 8px #FFA500,
+              0 0 12px #FFA500,
+              0 0 15px #FFA500,
+              0 0 25px #FFA500;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #ff0;
+  text-align: center;
+  font-size: 2em;
+}
+
+.login-box h2 {
+  display: block;
+  margin-bottom: 8px;
+  color: #ff0;
+  font-size: 1.5em;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 97%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.login-box button[type="submit"] {
+  background-color: rgba( 0, 0, 0, 0);
+  color: #ff0;
+  cursor: pointer;
+  border: 2px solid yellow;
+  border-radius: 25px;
+  width: 50%;
+  padding: 12px 24px;
+  font-size: 1.6em;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  margin-left: 25%;
+  margin-right: 25%;
+  transition: background-color 0.3s ease;
+}
+/****************************
+         INSCRIPTION
+****************************/
+#lightsabersub {
+  box-shadow: 0 0 5px #00FFFF,
+              0 0 8px #00FFFF,
+              0 0 12px #00FFFF,
+              0 0 15px #00FFFF,
+              0 0 25px #00FFFF;
+}
+.sub-box {
+  width: 80%;
+  background-color: black;
+  padding: 30px;
+  border-radius: 15px;
+  margin: auto auto 8em;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  box-shadow: 0 0 5px #00FFFF,
+              0 0 8px #00FFFF,
+              0 0 12px #00FFFF,
+              0 0 15px #00FFFF,
+              0 0 25px #00FFFF;
+}
+
+.sub-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #ff0;
+  text-align: center;
+  font-size: 2em;
+}
+
+.sub-box label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ff0;
+  font-size: 1.5em;
+}
+
+.sub-box input[type="text"],
+.sub-box input[type="mail"],
+.sub-box input[type="password"]{
+  width: 97%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 2em;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.sub-box button[type="submit"] {
+  background-color: rgba( 0, 0, 0, 0);
+  color: #ff0;
+  cursor: pointer;
+  border: 2px solid yellow;
+  border-radius: 25px;
+  width: 50%;
+  padding: 12px 24px;
+  font-size: 1.8em;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  margin-left: 25%;
+  margin-right: 25%;
+  transition: background-color 0.3s ease;
+}
+#inscription {
+  text-align: right;
+  margin-top: auto;
+}
+
+#inscription button {
+  background-color: rgba( 0, 0, 0, 0);
+  color: #ff0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  border: 2px solid yellow;
+  border-radius: 25px;
+  padding: 8px 16px;
+  font-size: 1.8em;
+  transition: background-color 0.3s ease;
+}
+/****************************
+           NAVETTES
+****************************/
+#lightsabership {
+  box-shadow: 0 0 5px #00FF00,
+              0 0 8px #00FF00,
+              0 0 12px #00FF00,
+              0 0 15px #00FF00,
+              0 0 25px #00FF00;
+}
+.transports {
+  color: #ff0;
+  margin: 5em;
+  border: 2px solid #FFF;
+  border-radius: 5px;
+  background-color: black;
+  box-shadow: 0 0 5px #00FF00,
+              0 0 8px #00FF00,
+              0 0 12px #00FF00,
+              0 0 15px #00FF00,
+              0 0 25px #00FF00;
+}
+.transports > img {
+  width: 100%;
+  height: 40%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.infotransports {
+  padding: 0 1em 1em;
+  line-height: 2em;
+}
+.infotransports > h4 {
+  text-align: center;
+  padding: .6em;
+  font-size: 1.6em;
+}
+.infotransports > p {
+  font-size: 1.4em;
+}
+/*****************************
+            ACCUEIL
+*****************************/
+#lightsaberhome {
+  box-shadow: 0 0 5px #0000FF,
+              0 0 8px #0000FF,
+              0 0 12px #0000FF,
+              0 0 15px #0000FF,
+              0 0 25px #0000FF;
+}
+.articlehome {
+  color: #ff0;
+}
+.articlehome > img {
+  background-size: cover;
+  width: 100%;
+}
+.articlehome > img {
+  background-size: cover;
+  width: 100%;
+}
+/* Style des balises article */
+.articlehome {
+  max-width: 80%;
+  margin: 5em auto;
+  border: 2px solid #FFF;
+  border-radius: 5px;
+  background-color: black;
+  box-shadow: 0 0 5px #0000FF,
+              0 0 8px #0000FF,
+              0 0 12px #0000FF,
+              0 0 15px #0000FF,
+              0 0 20px #0000FF;
+}
+
+/* Style des balises h4 */
+.articlehome > h4 {
+  font-size: 1.6em;
+  margin: 1em;
+  text-align: center;
+}
+.articlehome > h5 {
+  font-size: 1.4em;
+  text-align: center;
+}
+
+/* Style des balises img */
+.articlehome > img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style des balises p */
+.articlehome > p {
+  margin-top: 0;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  padding: 1em;
+}
+
+/* Style du premier bloc de texte */
+.articlehome:first-of-type {
+  text-align: center;
+}
+
+.articlehome:first-of-type img:first-of-type {
+  display: block;
+  margin: 0 auto;
+}
+#imagearticle1top {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.retouraccueil {
+  margin: 2em 2em 2em 4em;
+}
+.retouraccueil > a {
+  color: #ff0;
+  font-size: 1.8em;
+}
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 2em 4em;
+    box-shadow: 0 0 5px #0000FF,
+                  0 0 8px #0000FF,
+                  0 0 12px #0000FF,
+                  0 0 15px #0000FF,
+                  0 0 25px #0000FF;
+}
+legend {
+    color: #FF0;
+    font-size: 2em;
+}
+/*******************************
+        Commentaire
+*******************************/
+#lightsaberComm {
+  box-shadow: 0 0 5px #8A2BE2,
+              0 0 8px #8A2BE2, 
+              0 0 12px #8A2BE2, 
+              0 0 15px #8A2BE2, 
+              0 0 20px #8A2BE2;
+}
+
+#formcom {
+  background-image: url("https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/xwing.png");
+  background-size: cover;
+  margin: 5em;
+  padding: 2em;
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #8A2BE2,
+              0 0 8px #8A2BE2, 
+              0 0 12px #8A2BE2, 
+              0 0 15px #8A2BE2, 
+              0 0 20px #8A2BE2;
+}
+#formcom > h4 {
+  color: #FF0;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+#formcom > label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 1em;
+  font-size: 1.5em;
+}
+
+#formcom > input[type="text"],
+textarea {
+  width: 100%;
+  padding: 1.2em;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  opacity: .5;
+}
+
+#formcom > input[type="submit"] {
+  display: block;
+  width: 60%;
+  padding: .6em;
+  margin: 2em 20% 1em;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  opacity: .5;
+}
+/************************************
+            TABLETTE
+************************************/
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .menu__box {
+     padding-top: 8em;
+  }
+  .carrousel-images img {
+    width: 70%;
+    margin: auto;
+  }
+  #cargogr75 {
+    padding: 1em 0;
+  }
+}
+/************************************
+            PC
+************************************/
+@media only screen and (min-width: 1200px) {
+  /********LOGIN******/
+  .login-box {
+    margin: 4em auto;
+    width: 60%;
+    padding: 1em;
+  }
+  .login-box h2 {
+    font-size: 1.8em;
+  }
+  .user-box > label {
+    font-size: 1.2em;
+  }
+  .login-box input[type="text"],
+  .login-box input[type="password"] {
+    font-size: 1.6em;
+  }
+  .login-box button[type="submit"] {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+  #inscription button {
+    font-size: 1.4em;
+    width: 30%;
+  }
+  /********SUB******/
+  .sub-box {
+    width: 70%;
+    padding: 1em;
+    }
+  .sub-box button[type="submit"] {
+    margin-top: 0;
+    margin-bottom: 2em;
+    font-size: 1.3em;
+  }
+  .sub-box h2 {
+    font-size: 1.8em;
+  }
+  .sub-box > label {
+    font-size: 1.2em;
+  }
+  .sub-box input[type="text"],
+  .sub-box input[type="password"],
+  .sub-box input[type="mail"]{
+    font-size: 1.6em;
+  }
+  /********NAV******/
+    #identite {
+    margin: 0 3em 0 12em;
+   }
+   .menu__box {
+    background-image: url("https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/obiwan.png");
+    background-size: cover;
+    width: 30%;
+    margin: 0;
+    padding: 0;
+   }
+   .menu__item {
+    margin: 0 0.6em;
+    font-size: 1.8em;
+    padding: 0.4em 0 0.4em 0;
+
+   }
+   .boxdesktop {
+     margin: 7em 0 0;
+     padding: 0;
+   
+   }
+    .menu__item {
+     position: relative;
+     text-decoration: none;
+     color: #FFF;
+    }
+    
+    .menu__item::before {
+     content: "";
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 0;
+     height: 4px;
+     background-color: white;
+     transition: width 0.6s ease-in-out;
+     border-top-right-radius: 5px;
+     border-bottom-right-radius: 5px;
+    }
+    .bord1::before {
+      box-shadow: 0 0 5px #0000FF,
+                  0 0 8px #0000FF,
+                  0 0 12px #0000FF,
+                  0 0 15px #0000FF,
+                  0 0 25px #0000FF;
+    }
+    .bord1:hover::before {
+      width: 60%;
+    }
+    .bord2::before {
+      box-shadow: 0 0 5px #FFFFFF,
+                  0 0 8px #FFFFFF,
+                  0 0 12px #FFFFFF,
+                  0 0 15px #FFFFFF,
+                  0 0 25px #FFFFFF;
+    }
+    .bord2:hover::before {
+      width: 95%;
+    }
+    .bord3::before {
+      box-shadow: 0 0 5px #FF0000,
+                  0 0 8px #FF0000,
+                  0 0 12px #FF0000,
+                  0 0 15px #FF0000,
+                  0 0 25px #FF0000;
+    }
+    .bord3:hover::before {
+      width: 95%;
+    }
+    .bord4::before {
+      box-shadow: 0 0 5px #00FF00,
+                  0 0 8px #00FF00,
+                  0 0 12px #00FF00,
+                  0 0 15px #00FF00,
+                  0 0 25px #00FF00;
+    }
+    .bord4:hover::before {
+      width: 95%;
+    }
+    .bord5::before {
+      box-shadow: 0 0 5px #8A2BE2,
+                  0 0 8px #8A2BE2,
+                  0 0 12px #8A2BE2,
+                  0 0 15px #8A2BE2,
+                  0 0 25px #8A2BE2;
+    }
+    .bord5:hover::before {
+      width: 38%;
+    }
+    .menu__box > ul > hr {
+      margin-top: 0.8em;
+      margin-bottom: 0.8em;
+    }
+  /********MON COMPTE******/
+  .moncompte {
+    margin: 3em 14em;
+  }
+  .moncompte > h2 {
+    color: #FF0;
+    font-size: 2em;
+    text-align: center;
+  }
+  .compteset {
+  border-top: 2px solid #FF0;
+  margin: 2em;
+  }
+  .compteset > legend {
+    font-size: 1.8em;
+  }
+  .moncompteinfoperso {
+    margin: 2em 3em;
+  }
+  .compteset > section > p {
+  color: #FF0;
+  line-height: 2em;
+  font-size: 1.2em;
+  }
+  .mesresainfos {
+    margin: 2em;
+  }
+  
+    /********ARTICLE******/
+    .articlehome {
+      max-width: 60%;
+    }
+    .articlehome > div > p {
+      font-size: 1.4em;
+    }
+    .articlehome > div > h4 {
+      font-size: 1.8em;
+    }
+    .articlehome > div > h5 {
+      font-size: 1.6em ;
+    }
+    .articleplanet {
+      
+    }
+    /********COM******/
+    #formcom {
+      margin: 5em auto 8em;
+      max-width: 70%;
+    }
+    /********RESERVATION******/
+    .infoplanet {
+      margin: 2em;
+    }
+    .planetsection {
+      margin: 5em auto 8em;
+      max-width: 90%;
+    }
+    .carrousel {
+      margin: auto;
+    }
+    .carrousel-images {
+      margin-bottom: 0;
+      max-width: 80%;
+    }
+    .carrousel-images > img {
+      width: 30em;
+    }
+    #formresa {
+      font-size: 0.7em;
+    }
+    #reservationform {
+      margin: 3em 5em 4em;
+    }
+  /******ACCUEIL*******/
+    .articles-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px; /* Espacement entre les articles */
+      border: 2px solid white;
+      margin: 2em;
+      box-shadow: 0 0 5px #0000FF,
+                  0 0 8px #0000FF,
+                  0 0 12px #0000FF,
+                  0 0 15px #0000FF,
+                  0 0 25px #0000FF;
+    }
+    legend {
+      color: #FF0;
+      font-size: 2em;
+    }
+  /********TRANSPORT******/
+    .gridtransports {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .transports:nth-child(-n+4) {
+      grid-column: span 2;
+    }
+    .transports:last-child {
+      grid-column: 2 / span 2; /* L'article 5 s'étend sur les colonnes 1 et 2 */
+      justify-self: center;
+    }
+    .transports{
+      margin: 5em auto 1em;
+      max-width: 80%;
+    }
+    .infotransports > h4 {
+      font-size: 1.4em;
+    }
+    .infotransports > p {
+      font-size: 1.2em;
+    }
+  /********CARROUSEL******/
+    .articleplanet {
+      flex-direction: row;
+    }
+  /********COMMENTAIRE******/
+  #formcom > h4 {
+    font-size: 1.8em;
+  }
+  #formcom > label {
+    margin: 0 0 .6em;
+  }
+  #formcom > input[type="text"], textarea {
+    padding: 1em;
+  }
+  #formcom > input[type="submit"] {
+    margin: 1.4em 20% 1em;
+  }
+  
+}
+

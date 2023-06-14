@@ -1,0 +1,25 @@
+<!--Formulaire de connexion-->
+<main>
+  <span id="lightsaberlogin" class="lightsaber"></span>
+  <section class="login-box">
+    <h2>Connexion</h2>
+    <form action="index.php?action=login" method="POST">
+      <fieldset class="user-box">
+          <label for="nom">Nom :</label>
+          <input type="text" name="nom" id="nom" required="" autocomplete="off">
+          
+          <label for="prenom">Prénom :</label>
+          <input type="text" name="prenom" id="prenom" required="" autocomplete="off">
+          
+          <label for="mail">eMail :</label>
+          <input type="text" name="mail" id="mail" required="" autocomplete="off">
+          
+          <label for="password">Mot de Passe :</label>
+          <input type="password" name="password" id="password" required="" autocomplete="off">
+      </fieldset>
+      <button type="submit" name="login">Se Connecter</button>
+    </form>
+      <a id="inscription" href="index.php?action=subscribe"><button>S'inscrire</button></a>
+  </section>
+</main>
+	

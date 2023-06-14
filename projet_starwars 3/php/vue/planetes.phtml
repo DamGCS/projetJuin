@@ -1,0 +1,137 @@
+<main>
+  <span id="lightsaberresa" class="lightsaber"></span>
+    <section class="planetsection">
+      
+      <a class="menu__item" href="index.php?action=transitionresa">Transition</a>
+      
+      <section class="carrousel-btns">
+        <button class="carrousel-prev">Précédent</button>
+        <h2 class="carrousel-title"></h2>
+        <button class="carrousel-next">Suivant</button>
+      </section>
+      
+  <section class="carrousel">
+    
+    <article class="articleplanet">
+        <section class="infoplanet invisiblenom">
+          <h4><?= $planetes[0]['nom'] ?></h4>
+        </section>
+        <figure class="carrousel-images">
+            <img id="coruscant1" src="https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/coruscant.png" alt="Coruscant">
+        </figure>
+        <section id="infoplanet-1" class="infoplanet">
+          <p>Région : <?= $planetes[0]['region'] ?></p>
+          <p>Secteur : <?= $planetes[0]['secteur'] ?></p>
+          <p>Système : <?= $planetes[0]['systeme'] ?></p>
+          <p>Capitale : <?= $planetes[0]['capitale'] ?></p>
+          <p>Habitants : <?= $planetes[0]['habitant'] ?></p>
+        </section>
+    </article>
+    
+    <article class="articleplanet">
+        <section class="infoplanet invisiblenom">
+          <h4><?= $planetes[1]['nom'] ?></h4>
+        </section>
+        <figure class="carrousel-images">
+            <img id="naboo1" src="https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/naboo.png" alt="Naboo">
+        </figure>
+        <section id="infoplanet-2" class="infoplanet">
+          <p>Région : <?= $planetes[1]['region'] ?></p>
+          <p>Secteur : <?= $planetes[1]['secteur'] ?></p>
+          <p>Système : <?= $planetes[1]['systeme'] ?></p>
+          <p>Capitale : <?= $planetes[1]['capitale'] ?></p>
+          <p>Habitants : <?= $planetes[1]['habitant'] ?></p>
+        </section>
+    </article>
+    
+    <article class="articleplanet">
+        <section class="infoplanet invisiblenom">
+          <h4><?= $planetes[2]['nom'] ?></h4>
+        </section>
+        <figure class="carrousel-images">
+            <img id="tatooine1" src="https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/tatooine.png" alt="Tatooine">
+        </figure>
+        <section id="infoplanet-3" class="infoplanet">
+          <p>Région : <?= $planetes[2]['region'] ?></p>
+          <p>Secteur : <?= $planetes[2]['secteur'] ?></p>
+          <p>Système : <?= $planetes[2]['systeme'] ?></p>
+          <p>Capitale : <?= $planetes[2]['capitale'] ?></p>
+          <p>Habitants : <?= $planetes[2]['habitant'] ?></p>
+        </section>
+    </article>
+    
+    <article class="articleplanet">
+        <section class="infoplanet invisiblenom">
+          <h4><?= $planetes[3]['nom'] ?></h4>
+        </section>
+        <figure class="carrousel-images">
+            <img id="kashyyyk1" src="https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/kashyyyk.png" alt="Kashyyyk">
+        </figure>
+        <section id="infoplanet-4" class="infoplanet">
+          <p>Région : <?= $planetes[3]['region'] ?></p>
+          <p>Secteur : <?= $planetes[3]['secteur'] ?></p>
+          <p>Système : <?= $planetes[3]['systeme'] ?></p>
+          <p>Capitale : <?= $planetes[3]['capitale'] ?></p>
+          <p>Habitants : <?= $planetes[3]['habitant'] ?></p>
+        </section>
+    </article>
+    
+    <article class="articleplanet">
+        <section class="infoplanet invisiblenom">
+          <h4><?= $planetes[4]['nom'] ?></h4>
+        </section>
+        <figure class="carrousel-images">
+            <img id="lothal1"src="https://damienguichous.sites.3wa.io/projet_starwars/ressources/images/lothal.png" alt="Lothal">
+        </figure>
+        <section id="infoplanet-5" class="infoplanet">
+          <p>Région : <?= $planetes[4]['region'] ?></p>
+          <p>Secteur : <?= $planetes[4]['secteur'] ?></p>
+          <p>Système : <?= $planetes[4]['systeme'] ?></p>
+          <p>Capitale : <?= $planetes[4]['capitale'] ?></p>
+          <p>Habitants : <?= $planetes[4]['habitant'] ?></p>
+        </section>
+    </article>
+      
+    </section>
+
+    <?php 
+    require_once "reservation.html"
+    ?>
+  </section>
+</main>
+
+<script>
+  
+    // Récupérer les éléments du DOM nécessaires
+      const carrousel = document.querySelector('.carrousel');
+      const articles = carrousel.querySelectorAll('article');
+      const prevBtn = document.querySelector('.carrousel-prev');
+      const nextBtn = document.querySelector('.carrousel-next');
+      const title = document.querySelector('.carrousel-title');
+      
+      // Initialiser l'état du carrousel
+      let currentArticle = 0;
+      displayArticle(currentArticle);
+      
+      // Ajouter les écouteurs d'événements pour les boutons précédent et suivant
+      prevBtn.addEventListener('click', () => {
+        currentArticle = (currentArticle === 0) ? articles.length - 1 : currentArticle - 1;
+        displayArticle(currentArticle);
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        currentArticle = (currentArticle === articles.length - 1) ? 0 : currentArticle + 1;
+        displayArticle(currentArticle);
+      });
+      
+      // Fonction pour afficher l'article actuel
+      function displayArticle(index) {
+        // Masquer tous les articles
+        articles.forEach(article => article.style.display = 'none');
+        // Afficher l'article actuel
+        articles[index].style.display = 'flex';
+        // Mettre à jour le titre
+        title.textContent = articles[index].querySelector('h4').textContent;
+      }
+</script>
+

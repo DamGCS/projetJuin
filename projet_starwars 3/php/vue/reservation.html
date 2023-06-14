@@ -1,0 +1,38 @@
+<form action="" method="POST" id="reservationform">
+        <h3>Réservation :</h3>
+        <section id="dateheure">
+           <fieldset id="depart">
+                <label for="datedepart">Date de départ :</label>
+                <input type="date" name="date_de_depart" id="datedepart" class="inputresa"/>
+                
+                <label for="heuredepart">Heure de depart :</label>
+                <input type="time" name="heure_de_depart" id="heuredepart" class="inputresa"/>
+           </fieldset>
+           
+           <fieldset id="arrive">
+                <label for="datearrive">Date d'arrivée :</label>
+                <input type="date" name="date_arrive" id="datearrive" class="inputresa"/>
+                
+                <label for="heurearrive">Heure d'arrivée :</label>
+                <input type="time" name="heure_arrive" id="heurearrive" class="inputresa"/>
+           </fieldset>
+           
+           <fieldset>
+                <label for="planet-select">Planètes :</label>
+                <select name="planete" id="planet-select" class="inputresa">
+                    <option value="planete">--Choix--</option>
+                    <option value="coruscant">Coruscant</option>
+                    <option value="naboo">Naboo</option>
+                    <option value="tatooine">Tatooine</option>
+                    <option value="kashyyyk">Kashyyyk</option>
+                    <option value="lothal">Lothal</option>
+                </select>
+                
+                <label for="passager" id="passagers">Passagers :</label>
+                <input type="number" name="combien_de_personnes" min="1" max="12" id="passager" class="inputresa"/>
+          </fieldset>
+        </section>
+            <label for="btnresa"></label>
+            <input type="submit" name="reservation" value="Réserver" id="btnresa">
+</form>
+

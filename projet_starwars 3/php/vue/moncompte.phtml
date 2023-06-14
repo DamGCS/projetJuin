@@ -1,0 +1,78 @@
+<main>
+    <span id="lightsabermoncompte" class="lightsaber"></span>
+        
+    <section class="retouraccueil">
+        <a href="index.php?action=accueil">Retour à l'accueil</a>
+    </section>
+    
+<?php
+    if (isset($_SESSION['id'])) {
+        // Connecté
+        $currentID = $_SESSION['id'];
+        $query = "SELECT prenom, nom, lieu_de_residence, mail FROM users WHERE id=:currentID";
+        $stmt = Db::getDb()->prepare($query);
+        $stmt->execute(['currentID' => $currentID]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $prenom = $result['prenom'];
+        $nom = $result['nom'];
+        $lieu_de_residence = $result['lieu_de_residence'];
+        $mail = $result['mail'];
+    }
+?>
+    
+    <section class="moncompte">
+        <h2>Mon Profil</h2>
+        <fieldset class="compteset">
+            <legend>Mes Informations Personnelles</legend>
+            <section class="moncompteinfoperso">
+                <p>Prénom : <?php echo $prenom; ?></p>
+                <p>Nom : <?php echo $nom; ?></p>
+                <p>Lieu de résidence : <?php echo $lieu_de_residence; ?></p>
+                <p>eMail : <?php echo $mail; ?></p>
+            </section>
+        </fieldset>
+        
+        <fieldset class="compteset">
+            <legend>Mes Réservations</legend>
+
+<?php
+if (isset($_SESSION['id'])) {
+    // Connecté
+    $currentID = $_SESSION['id'];
+
+    // Récupérer les informations de réservation du client
+    $query = "SELECT date_de_depart, date_arrive, heure_de_depart, heure_arrive, planete, combien_de_personnes 
+                FROM reservations 
+                WHERE id_users=:currentID";
+    $stmt = Db::getDb()->prepare($query);
+    $stmt->execute(['currentID' => $currentID]);
+    $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Afficher les informations de réservation
+    foreach ($reservations as $reservation) {
+        $date_de_depart = $reservation['date_de_depart'];
+        $date_arrive = $reservation['date_arrive'];
+        $heure_de_depart = $reservation['heure_de_depart'];
+        $heure_arrive = $reservation['heure_arrive'];
+        $planete = $reservation['planete'];
+        $combien_de_personnes = $reservation['combien_de_personnes'];
+        ?>
+
+            <section class="mesresainfos">
+                <p>Date et heure du départ : Le <?php echo $date_de_depart; ?> à <?php echo $heure_de_depart; ?></p>
+                <p>Date et heure d'arrivée : Le <?php echo $date_arrive; ?> à <?php echo $heure_arrive; ?></p>
+                <p>Planète que vous souhaitez visiter : <?php echo $planete; ?></p>
+                <p>Nombre de personnes souhaitant voyager : <?php echo $combien_de_personnes; ?></p>
+            </section>
+            <hr>
+        
+
+        <?php
+        
+    }
+}
+?>
+        </fieldset>
+            
+    </section>
+</main>
